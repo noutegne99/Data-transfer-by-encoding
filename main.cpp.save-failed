@@ -1,0 +1,37 @@
+#include <iostream>
+#include <windows.h>
+#include <mysql.h>
+#include <sstream>
+#include<stdio.h>
+#include<vector>
+
+
+using namespace std;
+
+int main()
+{
+    MYSQL* conn;
+    conn = mysql_init(0);
+    conn = mysql_real_connect(conn, "192.168.1.18", "admin", "admin", "bitbd", 0, NULL, 0);
+
+    int qstate = 0;
+    stringstream sql;
+    vector<string> value ={"0000000000000000000000000000000011", "00000000000000000000000000000000111","0000000000000000000000000000001111"};
+    for (int  i=0; i<value.size() ;i++){
+        sql << "INSERT INTO tablebit(value) VALUES('" << value[i] <<"')";
+        string query = sql.str();
+        const char* q = query.c_str();
+        qstate = mysql_query(conn, q);
+
+        if(qstate == 0){
+            cout << " updated..." << endl;
+
+        }else{
+            cout << "Update Error" << endl;
+
+        }
+
+
+        }
+}
+
