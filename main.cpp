@@ -8,10 +8,8 @@
 #include <iomanip>
 #include <errno.h>
 #include <inttypes.h>
-
 #include <string>
 #include <map>
-
 #include <iostream>
 #include <iterator>
 #include <vector>
@@ -65,19 +63,9 @@ MYSQL_ROW row;
 
 int main()
 {
-
-
-	char tabIndex[] = {
-			   'a','b','c','d','e','f','g','h','i','j',
-			   'k','l','m','n','o','p','q','r','s','t',
-			   'u','v','w','x','y','z', 'A','B','C','D',
-				       'E','F','G','H','I','J','K', 'L','M','N',
-				       'O','P','Q','R','S','T','U', 'V','W','X',
-				       'Y','Z','1','2','3','4','5','6','7','8',
-			   '9','0','!','@','#','$','%','?','&','*',
-			   '(',')','-','=','+','~','|','/',',','.',
-				       '>','<','{','}','[',']',';',':','_','`',
-				       '\0'
+	char tabIndex[] = { 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', 'A','B','C','D',
+			    'E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U', 'V','W','X','Y','Z','1','2','3','4','5','6','7','8',
+			    '9','0','!','@','#','$','%','?','&','*', '(',')','-','=','+','~','|','/',',','.', '>','<','{','}','[',']',';',':','_','`', '\0'
 			   };
 
 
@@ -86,7 +74,7 @@ int main()
       MYSQL *conn;
 
       //conn = mysql_init(NULL);
-      conn = mysql_real_connect(&mysql, "160.153.41.3", "rootuserdb2", "rootuserdb2", "bitDBM", 3306, NULL, 0);
+      conn = mysql_real_connect(&mysql, "160.15.41.3", "rootuserdb2", "rootuserdb2", "bitDBM", 3306, NULL, 0);
       if(conn == NULL){
        cout << "Mauvaise Connexion"<< endl;
 
